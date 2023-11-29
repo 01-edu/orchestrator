@@ -36,7 +36,7 @@ spec:
       restartPolicy: Always
       containers:
         - name: billing-queue
-          image: nprimo/rabbitmq:0.0.3
+          image: ghcr.io/01-edu/content-rabbitmq:latest
           env:
             - name: RABBITMQ_USER
               valueFrom:
