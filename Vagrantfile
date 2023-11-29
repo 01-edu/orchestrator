@@ -18,6 +18,7 @@ master_script = <<-SHELL
     sleep 5
     cp /var/lib/rancher/k3s/server/token /vagrant_shared
     chmod 644 /etc/rancher/k3s/k3s.yaml
+    cp /etc/rancher/k3s/k3s.yaml /vagrant_shared
     cp /etc/rancher/k3s/k3s.yaml /
     SHELL
 
@@ -36,7 +37,6 @@ Vagrant.configure("2") do |config|
   config.vm.define "master", primary: true do |master|
     master.vm.network "private_network", ip: master_ip
     master.vm.synced_folder "./k3s", "/vagrant_shared"
-    master.vm.synced_folder "./manifests/", "/manifests"
     master.vm.hostname = "master"
     master.vm.provider "virtualbox" do |vb|
       vb.memory = "2048"

@@ -26,6 +26,10 @@ programs, or any equivalent ones:
 To run and manage the Kubernetes cluster on the VM cluster, use the provided 
 `./orchestrator.sh` script.
 
+To run `kubectl` on your machine to interact with the Kubernetes cluster, you 
+need to `export KUBECONFIG=./k3s/k3s.yaml` after you created the VM (e.g. after
+running `./orchestrator.sh create`.
+
 ## Local development
 
 To run locally, start a Kubernetes cluster by running:
