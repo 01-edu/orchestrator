@@ -1,8 +1,22 @@
 #!/bin/bash
 
+function help() {
+    echo "orchestrator CLI v0.0.1"
+    echo
+    echo "Manage a Kubernetes cluster in a VM kluster running K3s"
+    echo
+    echo "USAGE"
+    echo "  $./orchestrator.sh COMMAND"
+    echo 
+    echo "Available commands:"
+    echo "  create  Create the VM cluster using the local Vagrantfile config"
+    echo "  start   Start the Kubernetes cluster on the VM cluster"
+    echo "  stop    Stop the Kubernetes cluster on the VM cluster"
+    echo
+}
+
 if [[ $# -ne 1 ]]; then
-    echo "Run the script as follow"
-    echo "./orchestrator.sh [create|start|stop]"
+    help
     exit 1
 fi
 
@@ -32,7 +46,8 @@ case $1 in
         vagrant destroy -f 
         ;;
     *)
-        echo unknown argument
+        echo "${1} is an unknown command"
+        help
         exit 1
         ;;
 esac
