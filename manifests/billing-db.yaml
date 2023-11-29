@@ -31,7 +31,7 @@ spec:
       restartPolicy: Always
       containers:
         - name: billing-db
-          image: nprimo/postgres-db:0.0.1
+          image: ghcr.io/01-edu/content-postgres-db:latest 
           env:
             - name: DB_USER
               valueFrom:
