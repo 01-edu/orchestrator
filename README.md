@@ -23,7 +23,7 @@ programs, or any equivalent ones:
 - [*optional*] [minikube](https://kubernetes.io/docs/tasks/tools/#minikube) to
   deploy the Kubernetes cluster on your machine instead of the VM cluster.
 
-To run and mange the Kubernetes cluster on the VM cluster, use the provided 
+To run and manage the Kubernetes cluster on the VM cluster, use the provided 
 `./orchestrator.sh` script.
 
 ## Local development
