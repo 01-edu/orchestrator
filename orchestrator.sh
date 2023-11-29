@@ -1,5 +1,7 @@
 #!/bin/bash
 
+KUBECONFIG="./k3s/k3s.yaml"
+
 function help() {
     echo "orchestrator CLI v0.0.1"
     echo
@@ -28,17 +30,10 @@ case $1 in
         ;;
     "start")
         echo start cluster
-        vagrant up
-        # TODO: make this cleaner
-        vagrant ssh master -c "kubectl apply -f /manifests/"
-
-        ## Use the following for local test
-        #kubectl port-forward $(kubectl get pods | grep api-gateway \
-         #| awk '{print $1}') 3000:3000 
+        KUBECONFIG=${KUBECONFIG} kubectl apply -f ./manifests/
         ;;
     "stop")
         echo stop cluster
-        # TODO: which command to use here?
         vagrant suspend
         ;;
     "clean")
