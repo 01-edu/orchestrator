@@ -40,7 +40,7 @@ case $1 in
 "clean")
 	echo remove cluster and resources
 	vagrant destroy -f
-    rm -rf ./k3s
+	rm -rf ./k3s
 	;;
 *)
 	echo "${1} is an unknown command"
