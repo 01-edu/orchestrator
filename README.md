@@ -23,23 +23,9 @@ programs, or any equivalent ones:
 - [*optional*] [minikube](https://kubernetes.io/docs/tasks/tools/#minikube) to
   deploy the Kubernetes cluster on your machine instead of the VM cluster.
 
-To run and manage the Kubernetes cluster on the VM cluster, use the provided 
+To run and manage the Kubernetes cluster on the VM cluster, use the provided
 `./orchestrator.sh` script.
 
-To run `kubectl` on your machine to interact with the Kubernetes cluster, you 
+To run `kubectl` on your machine to interact with the Kubernetes cluster, you
 need to `export KUBECONFIG=./k3s/k3s.yaml` after you created the VM (e.g. after
 running `./orchestrator.sh create`.
-
-## Local development
-
-To run locally, start a Kubernetes cluster by running:
-
-```console
-# Use 2 nodes to mimic the subject request to run 2 VMs 
-$ minikube start --nodes=2
-...
-$
-```
-
-> If willing to deploy the Kubernetes on the local cluster, you must run
-> `kubectl` commands. The `./orchestrator.sh` script is not going to work
