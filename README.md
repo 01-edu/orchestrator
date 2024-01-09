@@ -23,8 +23,11 @@ programs, or any equivalent ones:
 - [*optional*] [minikube](https://kubernetes.io/docs/tasks/tools/#minikube) to
   deploy the Kubernetes cluster on your machine instead of the VM cluster.
 
-To run and manage the Kubernetes cluster on the VM cluster, use the provided
-`./orchestrator.sh` script.
+To run and manage the Kubernetes cluster on the VM cluster:
+- Create a `.env` file in the root of the project folder as the example
+  provided. You can simply `cp .env.example .env`.
+- Use the provided `./orchestrator.sh` script to create the K3S cluster and
+  start the application.
 
 To run `kubectl` on your machine to interact with the Kubernetes cluster, you
 need to `export KUBECONFIG=./k3s/k3s.yaml` after you created the VM (e.g. after
