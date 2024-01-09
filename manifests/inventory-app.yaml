@@ -40,18 +40,18 @@ spec:
             - name: INVENTORY_DB_USER
               valueFrom:
                 secretKeyRef:
-                  name: inventory-db-secrets
-                  key: user
+                  name: orchestrator-secrets
+                  key: INVENTORY_DB_USER
             - name: INVENTORY_DB_PASSWORD
               valueFrom:
                 secretKeyRef:
-                  name: inventory-db-secrets
-                  key: password
+                  name: orchestrator-secrets
+                  key: INVENTORY_DB_PASSWORD
             - name: INVENTORY_DB_NAME
               valueFrom:
                 secretKeyRef:
-                  name: inventory-db-secrets
-                  key: db-name
+                  name: orchestrator-secrets
+                  key: INVENTORY_DB_NAME
           ports:
             - protocol: TCP
               containerPort: 8080
