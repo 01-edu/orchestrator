@@ -15,6 +15,7 @@ Available commands:
     create  Create the VM cluster using the local Vagrantfile config
     start   Start the Kubernetes cluster on the VM cluster
     stop    Stop the Kubernetes cluster on the VM cluster
+    clean   Remove cluster and resource
 EOF
 }
 
@@ -31,6 +32,7 @@ case $1 in
 	;;
 "start")
 	echo start cluster
+    KUBECONFIG=${KUBECONFIG} kubectl apply -k .
 	KUBECONFIG=${KUBECONFIG} kubectl apply -f ./manifests/
 	;;
 "stop")

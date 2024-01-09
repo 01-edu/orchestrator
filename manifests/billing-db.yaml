@@ -36,18 +36,18 @@ spec:
             - name: DB_USER
               valueFrom:
                 secretKeyRef:
-                  name: billing-db-secrets
-                  key: user
+                  name: orchestrator-secrets
+                  key: BILLING_DB_USER
             - name: DB_PASSWORD
               valueFrom:
                 secretKeyRef:
-                  name: billing-db-secrets
-                  key: password
+                  name: orchestrator-secrets
+                  key: BILLING_DB_PASSWORD
             - name: DB_NAME
               valueFrom:
                 secretKeyRef:
-                  name: billing-db-secrets
-                  key: db-name
+                  name: orchestrator-secrets
+                  key: BILLING_DB_NAME
           livenessProbe:
             exec:
               command:

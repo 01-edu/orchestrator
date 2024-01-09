@@ -36,18 +36,18 @@ spec:
             - name: BILLING_DB_USER
               valueFrom:
                 secretKeyRef:
-                  name: billing-db-secrets
-                  key: user
+                  name: orchestrator-secrets
+                  key: BILLING_DB_USER
             - name: BILLING_DB_PASSWORD
               valueFrom:
                 secretKeyRef:
-                  name: billing-db-secrets
-                  key: password
+                  name: orchestrator-secrets
+                  key: BILLING_DB_PASSWORD
             - name: BILLING_DB_NAME
               valueFrom:
                 secretKeyRef:
-                  name: billing-db-secrets
-                  key: db-name
+                  name: orchestrator-secrets
+                  key: BILLING_DB_NAME
             - name: RABBITMQ_HOST
               value: billing-queue
             - name: RABBITMQ_PORT
@@ -57,12 +57,12 @@ spec:
             - name: RABBITMQ_USER
               valueFrom:
                 secretKeyRef:
-                  name: billing-queue-secrets
+                  name: orchestrator-secrets
                   key: RABBITMQ_USER
             - name: RABBITMQ_PASSWORD
               valueFrom:
                 secretKeyRef:
-                  name: billing-queue-secrets
+                  name: orchestrator-secrets
                   key: RABBITMQ_PASSWORD
           ports:
             - containerPort: 8080
